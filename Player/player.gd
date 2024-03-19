@@ -2,6 +2,10 @@ extends CharacterBody2D
 
 @export var horizontalSpeed : int
 @export var verticalSpeed : int
+@export var bulletScene : PackedScene
+
+@onready var shootSpawn = $Shoot
+@onready var shootingCooldown = $"Shooting cooldown"
 
 func _physics_process(delta):
 	var horizontalDirection : int = 0
@@ -22,5 +26,11 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("Focus"):
 		velocity /= 2
+	
+	if Input.is_action_pressed("Shoot") and shootingCooldown.is_stopped():
+		shootingCooldown.start()
+		var bulletInstance = bulletScene.instantiate()
+		bulletInstance.global_position = shootSpawn.global_position
+		get_parent().add_child(bulletInstance)
 	
 	move_and_slide()
