@@ -6,8 +6,8 @@
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_exqps")
-horizontalSpeed = 300
-verticalSpeed = 200
+horizontalSpeed = 400
+verticalSpeed = 250
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)

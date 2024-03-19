@@ -20,4 +20,7 @@ func _physics_process(delta):
 	velocity.x = horizontalSpeed * horizontalDirection
 	velocity.y = verticalSpeed * verticalDirection
 	
+	if Input.is_action_pressed("Focus"):
+		velocity /= 2
+	
 	move_and_slide()
