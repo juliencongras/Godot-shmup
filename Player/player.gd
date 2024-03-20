@@ -8,6 +8,9 @@ extends CharacterBody2D
 @onready var shootingCooldown = $"Shooting cooldown"
 
 func _physics_process(delta):
+	#Temporary max clamp value. Replace with size of the stage scene
+	position = position.clamp(Vector2(0, 0), get_window().size)
+	
 	var horizontalDirection : int = 0
 	var verticalDirection : int = 0
 	

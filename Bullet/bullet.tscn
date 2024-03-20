@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkewdicuxai2x"]
+[gd_scene load_steps=4 format=3 uid="uid://dkewdicuxai2x"]
 
 [ext_resource type="Script" path="res://Bullet/bullet.gd" id="1_5rj5g"]
+[ext_resource type="AudioStream" uid="uid://dshioa02ix67m" path="res://Bullet/playerShoot.wav" id="2_1650a"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_d1kbp"]
 
@@ -8,6 +9,7 @@
 gravity_scale = 0.0
 script = ExtResource("1_5rj5g")
 bulletSpeed = 800
+bulletDamage = 1
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 scale = Vector2(20, 20)
@@ -15,5 +17,10 @@ mesh = SubResource("SphereMesh_d1kbp")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(0, 27)
+
+[node name="Bullet sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_1650a")
+volume_db = -15.0
+autoplay = true
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
