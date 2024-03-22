@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bt2gky5oxb0m3"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_exqps"]
-[ext_resource type="Texture2D" uid="uid://crwv6i8wx4fbl" path="res://icon.svg" id="1_p0rjn"]
 [ext_resource type="PackedScene" uid="uid://dkewdicuxai2x" path="res://Bullet/bullet.tscn" id="2_imqqe"]
+[ext_resource type="Texture2D" uid="uid://cb6e0el8ewfx6" path="res://Player/ship_0001.png" id="3_1ps6v"]
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
@@ -12,8 +12,8 @@ verticalSpeed = 250
 bulletScene = ExtResource("2_imqqe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_p0rjn")
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("3_1ps6v")
 
 [node name="Shoot" type="Marker2D" parent="."]
 position = Vector2(0, -32)

@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" path="res://Bullet/bullet.gd" id="1_5rj5g"]
 [ext_resource type="AudioStream" uid="uid://dshioa02ix67m" path="res://Bullet/playerShoot.wav" id="2_1650a"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_d1kbp"]
+[ext_resource type="Texture2D" uid="uid://cfktq6qhjirdw" path="res://Bullet/tile_0000.png" id="2_distc"]
 
 [node name="Bullet" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -11,12 +10,11 @@ script = ExtResource("1_5rj5g")
 bulletSpeed = 800
 bulletDamage = 1
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-scale = Vector2(20, 20)
-mesh = SubResource("SphereMesh_d1kbp")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_distc")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(0, 27)
+position = Vector2(0, 22)
 
 [node name="Bullet sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_1650a")
