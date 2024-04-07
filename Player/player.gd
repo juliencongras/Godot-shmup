@@ -36,4 +36,6 @@ func _physics_process(delta):
 		bulletInstance.global_position = shootSpawn.global_position
 		get_parent().add_child(bulletInstance)
 	
+	Global.playerPosition = global_position
+	
 	move_and_slide()

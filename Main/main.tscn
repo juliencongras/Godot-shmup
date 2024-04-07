@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvadjpr505qn2"]
+[gd_scene load_steps=3 format=3 uid="uid://bvadjpr505qn2"]
 
 [ext_resource type="PackedScene" uid="uid://bt2gky5oxb0m3" path="res://Player/player.tscn" id="1_a0jw2"]
+[ext_resource type="PackedScene" uid="uid://co0fjfyhtl2b0" path="res://Enemy/enemy_spawner_test.tscn" id="2_i6jxs"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_a0jw2")]
 position = Vector2(561, 354)
+
+[node name="EnemySpawnerTest" parent="." instance=ExtResource("2_i6jxs")]
+position = Vector2(508, 61)

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://co0fjfyhtl2b0"]
+
+[ext_resource type="Script" path="res://Enemy/enemy_spawner_test.gd" id="1_77wou"]
+[ext_resource type="PackedScene" uid="uid://chpwgn6jk4g0v" path="res://Enemy/enemy.tscn" id="2_7ceid"]
+
+[node name="EnemySpawnerTest" type="Marker2D"]
+script = ExtResource("1_77wou")
+enemyScene = ExtResource("2_7ceid")
+
+[node name="SpawnCooldown" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="SpawnCooldown" to="." method="_on_spawn_cooldown_timeout"]
