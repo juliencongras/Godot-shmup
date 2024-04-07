@@ -5,10 +5,10 @@ var playerPosition : Vector2
 
 func _ready():
 	playerPosition = Global.playerPosition
+	look_at(playerPosition)
 
 func _physics_process(delta):
 	var targetPlayer = global_position.move_toward(playerPosition, delta)
-	look_at(targetPlayer)
 	velocity = targetPlayer.normalized() * enemySpeed
 	move_and_slide()
 
